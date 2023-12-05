@@ -38,4 +38,15 @@ public class L2021111736_13_Test {
         solution.sortColors(nums);
         assertEquals(Arrays.toString(ans), Arrays.toString(nums));
     }
+    /**
+     *  The data is empty.
+     */
+    @Test
+    public void testSolution4() {
+        Solution solution = new Solution();
+        int[] nums = {};
+        int[] ans = {};
+        solution.sortColors(nums);
+        assertEquals(Arrays.toString(ans), Arrays.toString(nums));
+    }
 }
