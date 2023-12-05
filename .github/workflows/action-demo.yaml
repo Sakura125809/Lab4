@@ -1,7 +1,7 @@
-name: tests
+name: Automerge
 on: push
 jobs:
-  run_tests:
+  automerge:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -18,3 +18,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+      - name: Automerge
+        uses: reitermarkus/automerge@v2
+        with:
+          token: ${{ secrets.MERGE_TOKEN }}
+          merge-method: merge
